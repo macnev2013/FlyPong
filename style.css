@@ -1,0 +1,54 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+:root {
+  --hue: 200;
+  --saturation: 50%;
+  --foreground-color: hsl(var(--hue), var(--saturation), 1%);
+  --background-color: hsl(var(--hue), var(--saturation), 100%);
+}
+
+body {
+  margin: 0;
+  background-color: var(--background-color);
+  overflow: hidden;
+}
+
+.paddle {
+  --position: 50;
+
+  position: absolute;
+  bottom: 1vw;
+  background-color: var(--foreground-color);
+  left: calc(var(--position) * 1vw);
+  transform: translateX(-50%);
+  width: 10vh;
+  height: 1.5vh;
+}
+
+.fly {
+  --x: 50;
+  --y: 50;
+
+  position: absolute;
+  bottom: 1vw;
+  left: calc(var(--x) * 1vw);
+  top: calc(var(--y) * 1vh);
+  transform: translate(-50%, -50%);
+  width: 8vh;
+  height: 8vh;
+}
+
+.score {
+  color: var(--foreground-color);
+  font-size: 40vh;
+  padding: 0 2vh;
+  padding: 1vh 0;
+  text-align: center;
+  left: 50vw;
+  top: 50vh;
+  opacity: 10%;
+}
